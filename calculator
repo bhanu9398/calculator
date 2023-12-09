@@ -1,0 +1,45 @@
+class Calculator:
+    def add(self, x, y):
+        return x + y
+
+    def subtract(self, x, y):
+        return x - y
+
+    def multiply(self, x, y):
+        return x * y
+
+    def divide(self, x, y):
+        if y != 0:
+            return x / y
+        else:
+            return "Cannot divide by zero."
+
+# Create an instance of the Calculator class
+calculator = Calculator()
+
+while True:
+    # Get user input for operation
+    operation = input("Choose an operation (+, -, *, /) or 'exit' to end: ").lower()
+
+    if operation == 'exit':
+        break  # Exit the loop if the user enters 'exit'
+
+    # Get user input for numbers
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+
+    # Perform the selected operation
+    if operation == '+':
+        result = calculator.add(num1, num2)
+    elif operation == '-':
+        result = calculator.subtract(num1, num2)
+    elif operation == '*':
+        result = calculator.multiply(num1, num2)
+    elif operation == '/':
+        result = calculator.divide(num1, num2)
+    else:
+        print("Invalid operation. Please choose a valid operation.")
+        continue  # Continue to the next iteration of the loop
+
+    # Display the result
+    print(f"Result: {result}\n")
